@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* create my coustom css library for tailwind */
+.my-container{
+    @apply  max-w-[1340px] w-full  mx-auto
+}
