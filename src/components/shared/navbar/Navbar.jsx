@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar  p-0 bg-yellow-200">
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -13,9 +13,7 @@ const Navbar = () => {
                         <li><a>Blog</a></li>
                     </ul>
                 </div>
-                <div className="btn btn-ghost text-xl md:text-2xl ">
-                <a> Bangladesi Chef Items</a>
-                </div>
+                <a className="btn btn-ghost text-xl md:text-2xl ">Bangladeshi Chef Items</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal text-lg font-semibold px-1">
@@ -29,7 +27,7 @@ const Navbar = () => {
                         <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>                    
                 </div>
-                {/* <h1>fkdfjkld</h1> to-do */}
+                <button className='btn btn-ghost text-lg  ml-2 font-semibold '>log out</button>
             </div>
         </div>
     );
