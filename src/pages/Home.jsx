@@ -1,9 +1,10 @@
 import React from 'react';
+import Bannar from '../components/bannar/Bannar';
 
 const Home = () => {
     return (
         <div className=' text-justify'>
-            <h2 className='text-xl'>chef hunter creating... </h2>
+            <Bannar></Bannar>
         </div>
     );
 };
