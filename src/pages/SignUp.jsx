@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialSignIn from './../components/social-button/SocialSignIn';
 
 const SignUp = () => {
     const handleSubmit = (event) => {
@@ -10,10 +11,10 @@ const SignUp = () => {
 
     }
     return (
-        <div className="hero pt-3 bg-base-200">
+        <div className="hero bg-base-200">
             <div className="hero-content flex-col ">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Please Sign up!</h1>
+                    <h1 className="text-3xl font-bold">Please Sign up!</h1>
                 </div>
                 <div className="card min-w-96 shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body py-2">
@@ -39,13 +40,15 @@ const SignUp = () => {
                             </label>
                             <input type="url" name="url" placeholder="your photo url" className="input input-bordered" required />
                         </div>
-                        <div className="form-control mt-2">
+
+                        <div className="form-control mt-4">
                             <button className="btn btn-primary">Sign-up</button>
                             <label className="label">
                                 <span>Al-ready have an account ?</span>
                                 <Link to="/log-in" className=" text-lg text-yellow-700 font-bold">Please Login!</Link>
                             </label>
                         </div>
+                        <SocialSignIn> sign up </SocialSignIn>
                     </form>
                 </div>
             </div>
