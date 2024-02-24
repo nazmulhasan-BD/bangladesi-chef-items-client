@@ -1,10 +1,10 @@
 import React from 'react';
-import Bannar from '../components/bannar/Bannar';
+import Header from '../components/header/Header';
 
 const Home = () => {
     return (
         <div className=' text-justify'>
-            <Bannar></Bannar>
+            <Header></Header>
         </div>
     );
 };

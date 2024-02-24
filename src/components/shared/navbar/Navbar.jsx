@@ -1,10 +1,32 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import { Bounce, toast } from 'react-toastify';
 
 const Navbar = () => {
-    const user = false;
+    const { user, logOut, loading } = useAuth();
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logout successful !', {
+                    position: "top-right",
+                    autoClose: 1500,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
+    // to-do
+
     return (
-        <div className="navbar sticky z-40 top-0 p-0 bg-yellow-500">
+        <div className="navbar sticky z-40 top-0 p-0 bg-sky-200">
             <div className="navbar-start ">
                 {/* this is for small device nav with responsivly */}
                 <div className="dropdown">
@@ -16,36 +38,52 @@ const Navbar = () => {
                         <li><Link to="/blogs">Blog</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl md:text-2xl ">Bangladeshi Chef Items</a>
+                <a className="btn hover:bg-blue-300 btn-ghost text-xl md:text-2xl ">Bangladeshi Chef Items</a>
             </div>
             {/* this is for large device nav */}
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal text-lg font-semibold px-1">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/blogs">Blog</Link></li>
+                <ul className="menu menu-horizontal gap-5  text-lg font-semibold px-1">
+                    <li className='hover:bg-blue-300 hover:rounded-lg'>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className='hover:bg-blue-300 hover:rounded-lg'>
+                        <Link to="/blogs">Blog</Link>
+                    </li>
                 </ul>
             </div>
             {/* this is user  & log status section with condition */}
             {
                 user ?
                     <div className="navbar-end">
-                        {/* tool tip is here */}
-                        <div tabIndex={0} role="button" className="btn tooltip md:tooltip-left tooltip-bottom btn-ghost btn-circle avatar" data-tip="user name">
-                            <img className="w-12 rounded-full" alt="Tailwind CSS Navbar  component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {/* tool tip is here with username */}
+                        <div tabIndex={0} role="button" className="btn tooltip md:tooltip-left tooltip-bottom btn-ghost btn-circle avatar" data-tip={user?.displayName}>
+
+                            {/*------- current user photo -------  */}
+                            {
+                                !user.photoURL ?
+                                    <span className="loading loading-spinner loading-md"></span>
+                                    :
+                                    <img className="w-12 rounded-full" alt="Tailwind CSS Navbar  component" src={user?.photoURL} />
+                            }
                         </div>
-                        <button className='btn btn-ghost text-lg  ml-2 font-semibold '>Log out
+
+                        <button onClick={handleLogOut} className='btn hover:bg-blue-300 btn-ghost text-lg  ml-2 font-semibold '>Log out
                         </button>
                     </div>
                     :
-                    <div className="navbar-end">
-                        <Link to="/sign-up" className='btn btn-ghost text-lg  ml-2 font-semibold '>
-                            Sign Up
-                        </Link>
-                        <Link to="/log-in" className='btn btn-ghost text-lg  ml-2 font-semibold '>
-                            Log in
-                        </Link>
-                    </div>
-
+                    loading ?
+                        <div className="navbar-end mr-10 ">
+                            <span className="loading loading-dots loading-lg"></span>
+                        </div>
+                        :
+                        <div className="navbar-end">
+                            <Link to="/login" className='btn hover:bg-blue-300 btn-ghost text-lg  ml-2 font-semibold '>
+                                Log in
+                            </Link>
+                            <Link to="/signup" className='btn hover:bg-blue-300 btn-ghost text-lg  ml-2 font-semibold '>
+                                Sign Up
+                            </Link>
+                        </div>
             }
         </div>
     );

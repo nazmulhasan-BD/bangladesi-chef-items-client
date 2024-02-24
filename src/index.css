@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 /* create my coustom css library for tailwind */
-.my-container{
-    @apply  max-w-[1340px] w-full  mx-auto
+.my-container {
+    @apply max-w-[1340px] w-full mx-auto
 }
-.my-container2{
-    @apply   w-full px-4 mx-auto
+
+.my-container2 {
+    @apply w-full px-4 mx-auto
 }
