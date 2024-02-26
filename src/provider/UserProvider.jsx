@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase-config/firebase.config';
 
 export const UserContext = createContext(null)
@@ -11,6 +11,17 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+
+    // for google signup
+    const googleSignUp = (provider) =>{
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+    }
+    // for github signup
+    const githubSignUp = (provider) =>{
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+    }
 
     // for register
     const createUser = (email, password) => {
@@ -32,6 +43,7 @@ const UserProvider = ({ children }) => {
 
     // for update user profile
     const updateUser = (name, photo) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         })
@@ -42,9 +54,10 @@ const UserProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
 
             if (currentUser) {
+                setLoading(true);
                 // User is logged in
                 setUser(currentUser);
-                setLoading(true);
+                setLoading(false);
             } else {
                 // User is logged out
                 setUser(null);
@@ -59,6 +72,8 @@ const UserProvider = ({ children }) => {
 
     const userInfo = {
         user,
+        googleSignUp,
+        githubSignUp,
         createUser,
         signInUser,
         updateUser,

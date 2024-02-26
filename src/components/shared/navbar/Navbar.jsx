@@ -8,9 +8,9 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                toast.success('Logout successful !', {
+                toast.success('Logged out successfully!', {
                     position: "top-right",
-                    autoClose: 1500,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: false,
                     pauseOnHover: true,
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <li><Link to="/blogs">Blog</Link></li>
                     </ul>
                 </div>
-                <a className="btn hover:bg-blue-300 btn-ghost text-xl md:text-2xl ">Bangladeshi Chef Items</a>
+                <Link to="/" className="btn hover:bg-blue-300 btn-ghost font-bold  text-xl md:text-2xl">Bangladeshi Chef Items</Link>
             </div>
             {/* this is for large device nav */}
             <div className="navbar-center hidden lg:flex">
@@ -61,9 +61,12 @@ const Navbar = () => {
                             {/*------- current user photo -------  */}
                             {
                                 !user.photoURL ?
-                                    <span className="loading loading-spinner loading-md"></span>
+                                    <span className="loading mt-3 loading-spinner loading-md"></span>
                                     :
-                                    <img className="w-12 rounded-full" alt="Tailwind CSS Navbar  component" src={user?.photoURL} />
+                                    loading ?
+                                        <span className="loading mt-3 loading-spinner loading-md"></span>
+                                        :
+                                        <img className="w-12 rounded-full" alt="user-photo" src={user?.photoURL} />
                             }
                         </div>
 
