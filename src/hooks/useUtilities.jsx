@@ -1,21 +1,9 @@
-import { useState } from 'react';
+import useAuth from "./useAuth";
+
 
 const useUtilities = () => {
-    const [error, setError] = useState("");
-    //  password validation ------------- 
 
-    const handlePassword = (e) => {
-        const passwordInput = e.target.value;
-        if (passwordInput.length == 0) {
-            setError("");
-        }
-        else if (passwordInput.length < 6) {
-            setError("Password must be at least 6 characters long");
-        }
-        else {
-            setError("");
-        }
-    };
+    const { setError } = useAuth();
 
     // email validation -----------------
 
@@ -31,7 +19,22 @@ const useUtilities = () => {
             setError("");
         }
     };
-    return [handleEmail, handlePassword, error, setError]
+    //  password validation ------------- 
+
+    const handlePassword = (e) => {
+        const passwordInput = e.target.value;
+        if (passwordInput.length == 0) {
+            setError("");
+        }
+        else if (passwordInput.length < 6) {
+            setError("Password must be at least 6 characters long");
+        }
+        else {
+            setError("");
+        }
+    };
+
+    return [handleEmail, handlePassword]
 };
 
 export default useUtilities;

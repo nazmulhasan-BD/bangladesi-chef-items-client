@@ -6,9 +6,9 @@ import useUtilities from '../hooks/useUtilities';
 import { useState } from 'react';
 
 const SignUp = () => {
-    const { createUser, updateUser, logOut, setLoading, } = useAuth();
+    const { createUser, updateUser, logOut, setLoading, error, setError } = useAuth();
     const navigate = useNavigate();
-    const [handleEmail, handlePassword, error, setError] = useUtilities();
+    const [handleEmail, handlePassword] = useUtilities();
     const [isload, setLoad] = useState(false);
 
     const handleSubmit = (event) => {
@@ -61,9 +61,12 @@ const SignUp = () => {
     }
     return (
         <div className="hero bg-base-200">
-            <div className="hero-content flex-col gap-5 mt-10 lg:flex-row-reverse ">
-                <div className="text-center w-[300px] p-6  rounded-s-full bg-white ">
-                    <h1 className="text-3xl font-bold mb-10">Please Sign up!</h1>
+            <div className="hero-content flex-col gap-8 mt-10 lg:flex-row-reverse">
+                <div className="text-center w-[300px] p-6  rounded-s-full bg-white">
+                    <h1 className="text-3xl font-bold mb-10">
+                        Please Sign up!
+                    </h1>
+                    {/* social sing in component */}
                     <SocialSignIn> sign up </SocialSignIn>
                 </div>
                 <div className="card min-w-96 shadow-2xl bg-base-100">
@@ -109,7 +112,6 @@ const SignUp = () => {
                                 <Link to="/login" className=" text-lg text-yellow-700 font-bold">Please Login!</Link>
                             </label>
                         </div>
-
                     </form>
                 </div>
             </div>

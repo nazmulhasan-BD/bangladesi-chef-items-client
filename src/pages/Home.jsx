@@ -1,10 +1,18 @@
-import Header from "../components/shared/header/Header";
+
+import Banner from '../components/shared/banner/Banner';
+import CarouselSection from './../components/shared/carousel/CarouselSection';
+import ChefSection from './../components/shared/chef-section/ChefSection';
+
+
+
 
 
 const Home = () => {
     return (
-        <div className=' text-justify'>
-            <Header></Header>
+        <div>
+            <Banner></Banner>
+            <CarouselSection></CarouselSection>
+            <ChefSection></ChefSection>
         </div>
     );
 };

@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      lobstar: ['Lobster', 'cursive']
+    },
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'spin-slow-5s': 'spin 5s linear infinite',
+      },
+    },
   },
   plugins: [require("daisyui")],
 }

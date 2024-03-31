@@ -7,13 +7,13 @@ import ScrollToTop from '../hooks/useScrollToTop';
 const Main = () => {
 
     return (
-        <div className='my-container '>
+        <div className='my-container flex flex-col min-h-screen '>
             <Navbar></Navbar>
-            <div className='' >
+            <div className='flex-grow' >
                 <ScrollToTop></ScrollToTop>
                 <Outlet></Outlet>
             </div>
-            <div className='max-w-[1340px] w-full  mx-auto'>
+            <div className=''>
                 <Footer></Footer>
             </div>
         </div >

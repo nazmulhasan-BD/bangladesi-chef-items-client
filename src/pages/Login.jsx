@@ -5,8 +5,8 @@ import useAuth from '../hooks/useAuth';
 import useUtilities from '../hooks/useUtilities';
 
 const Login = () => {
-    const [handleEmail, handlePassword, error, setError] = useUtilities();
-    const { signInUser, setLoading } = useAuth();
+    const [handleEmail, handlePassword] = useUtilities();
+    const { signInUser, setLoading, error, setError } = useAuth();
     const [isload, setLoad] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,7 +41,7 @@ const Login = () => {
                         <h1 className="text-3xl font-bold">Please Login!</h1>
                     </div>
                     <div className="card min-w-96 shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogIn} className=" px-8 py-2">
+                        <form onSubmit={handleLogIn} className=" px-8 pt-2">
 
                             <div className="form-control">
                                 <label className="label">
@@ -61,7 +61,7 @@ const Login = () => {
                                 }
                             </div>
 
-                            <div className="form-control mt-6">
+                            <div className="form-control mt-5">
                                 {
                                     !isload ?
                                         <button type="submit" disabled={error} className={error ? "bg-blue-400 text-sm text-white py-3 px-4 rounded-lg cursor-not-allowed" : "btn btn-primary"}>Log in</button>
@@ -74,9 +74,11 @@ const Login = () => {
                                     <Link to="/signup" className=" text-lg text-yellow-700 font-bold">Sign-up now!</Link>
                                 </label>
                             </div>
-                            {/* Social log in section here ----------- */}
-                            <SocialSignIn> log in </SocialSignIn>
                         </form>
+                        {/* Social log in section here ----------- */}
+                        <div className='px-9'>
+                            <SocialSignIn> log in </SocialSignIn>
+                        </div>
                     </div>
 
                 </div>

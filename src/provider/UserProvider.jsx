@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase-config/firebase.config';
 
 export const UserContext = createContext(null)
@@ -11,16 +11,17 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    console.log(user);
 
     // for google signup
-    const googleSignUp = (provider) =>{
+    const googleSignUp = (provider) => {
         setLoading(true);
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider);
     }
     // for github signup
-    const githubSignUp = (provider) =>{
+    const githubSignUp = (provider) => {
         setLoading(true);
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider);
     }
 
     // for register

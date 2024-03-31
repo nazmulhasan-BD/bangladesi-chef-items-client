@@ -2,40 +2,80 @@
 
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { FaGithubSquare, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
-const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
 
-
-const SocialSignIn = ({children}) => {
-
-    const {googleSignUp, githubSignUp} = useAuth();
+const SocialSignIn = ({ children }) => {
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    const { googleSignUp, githubSignUp, setLoading, updateUser, setError, user } = useAuth();
+    const navigate = useNavigate();
     // google sign in method 
-    const handleGoogle = ()=>{
+    const handleGoogle = () => {
+        setLoading(true);
+        setError("");
         googleSignUp(googleProvider)
-        .then((result) => {
-            console.log(result?.user);
-          }).catch((error) => {
-            // Handle Errors here.
-          
-            // ...
-            console.log(error);
-          });
+            .then(() => {
+                setLoading(true);
+                updateUser(user?.displayName, user?.photoURL)
+                    .then(() => {
+
+                    })
+                    .catch(error => {
+                        setError(error.code)
+                        setLoading(false);
+                    })
+                navigate("/");
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Log in successful",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                setLoading(false);
+            })
+            .catch((error) => {
+                setLoading(false);
+                if (error) {
+                    setError("Error: popup-closed-by-user, try again !")
+                }
+            });
     }
 
-    // google sign in method 
-    const handleGithub = ()=>{
+    // github sign in method 
+    const handleGithub = () => {
+        setLoading(true);
+        setError("");
         githubSignUp(githubProvider)
-        .then((result) => {
-            console.log(result?.user);
-          }).catch((error) => {
-            // Handle Errors here.
-          
-            // ...
-            console.log(error);
-          });
+            .then(() => {
+                setLoading(true);
+                updateUser(user?.displayName, user?.photoURL)
+                    .then(() => {
+
+                    })
+                    .catch(error => {
+                        setError(error.code)
+                        setLoading(false);
+                    })
+                navigate("/")
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Log in successful",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                setLoading(false);
+            })
+            .catch((error) => {
+                setLoading(false);
+                if (error) {
+                    setError("Error: popup-closed-by-user, try again !")
+                }
+            });
     }
 
     return (
