@@ -4,11 +4,14 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Blogs from "../pages/Blogs";
+import ChefRecipes from "../components/shared/chef-section/chefRecipes";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -26,6 +29,10 @@ export const router = createBrowserRouter([
                 path: "blogs",
                 element: <Blogs></Blogs>
             },
+            {
+                path: "chef-recipes/:nameId",
+                element: <ChefRecipes></ChefRecipes>
+            }
             
         ],
     }

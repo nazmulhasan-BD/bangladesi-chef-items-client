@@ -11,7 +11,6 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    console.log(user);
 
     // for google signup
     const googleSignUp = (provider) => {

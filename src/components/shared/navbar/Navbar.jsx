@@ -26,7 +26,7 @@ const Navbar = () => {
     // to-do
 
     return (
-        <div className="navbar sticky z-50 top-0 p-0 text-white bg-blue-900">
+        <div className="navbar sticky z-50 top-0 p-0 text-white bg-blue-800">
             <div className="navbar-start ">
                 {/* this is for small device nav with responsivly */}
                 <div className="dropdown">

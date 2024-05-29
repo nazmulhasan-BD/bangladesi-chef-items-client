@@ -5,7 +5,7 @@ const Banner = () => {
 
   return (
     <div className='relative lg:h-[85vh] h-[250px] bg-cover bg-center'  style={{ backgroundImage: "url('/src/assets/bannar_img/bannar2.jpg')", width: "100%" }}>
-      <div className='absolute text-center lg:mt-40  lg:inset-16 lg:border  rounded-lg lg:bg-blue-700 lg:bg-opacity-50 '>
+      <div className='absolute text-center lg:mt-40  lg:inset-16 lg:border  rounded-lg lg:bg-blue-700 lg:bg-opacity-40 '>
         <h2 style={{
           textShadow: '-2px -2px 0 #FEE7B9,2px -2px 0 #FEE7B9,-2px 2px 0 #FEE7B9, 2px 2px 0 #FEE7B9'
         }} className='text-3xl text-blue-900  lg:mt-3 mt-6 lg:text-5xl font-bold'>

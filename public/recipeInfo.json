@@ -1,0 +1,56 @@
+[
+    {
+        "recipeName": "Mutton Biryani",
+        "ingredients": [
+            "Basmati rice",
+            "Mutton",
+            "Yogurt",
+            "Bi-masala",
+            "Saffron"
+        ],
+        "method": [
+            "Marinate mutton with yogurt and  masala for at least 2 hours.",
+            "Cook basmati rice until 70% done.",
+            "Layer mutton and rice & add saffron-infused milk.",
+            "Seal the pot and cook on low heat for 45 minutes.",
+            "Garnish with fried onions and serve hot."
+        ],
+        "rating": 5
+    },
+    {
+        "recipeName": "Fish Curry",
+        "ingredients": [
+            "Fish ",
+            "Coco milk",
+            "Curry leaves",
+            "Turmeric",
+            "Tamarind "
+        ],
+        "method": [
+            "Marinate fish with turmeric and salt.",
+            "Heat oil, add curry leaves and spices.",
+            "Add coconut milk and tamarind paste, bring to a simmer.",
+            "Add fish and cook until done.",
+            "Serve with steamed rice."
+        ],
+        "rating": 4.5
+    },
+    {
+        "recipeName": "Chicken Roast",
+        "ingredients": [
+            "Chicken",
+            "Garlic",
+            "Rosemary",
+            "Lemon",
+            "Olive oil"
+        ],
+        "method": [
+            "Preheat oven to 375°F (190°C).",
+            "Rub chicken with olive oil, garlic, rosemary, and lemon.",
+            "Roast in oven for 1 hour or until cooked through.",
+            "Baste occasionally with pan juices.",
+            "Serve with roasted vegetables."
+        ],
+        "rating": 4
+    }
+]

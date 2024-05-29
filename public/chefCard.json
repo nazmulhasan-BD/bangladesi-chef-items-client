@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "chefName": "Nazmul Hasan",
+        "likes": "2.3k+",
+        "years": "10+",
+        "totalRecipes": "5",
+        "image": "https://assets.telegraphindia.com/telegraph/2022/Apr/1650724603_whatsapp-image-2022-04-23-at-19.jpg",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    },
+    {
+        "id": "2",
+        "chefName": "Kafi Rahman",
+        "likes": "1.6k+",
+        "years": "5+",
+        "totalRecipes": "3",
+        "image": "https://iexaminer.org/wp-content/uploads/2019/03/Uddin-2-web.jpg",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    },
+    {
+        "id": "3",
+        "chefName": "Muhammad Ali",
+        "likes": "3.4k+",
+        "years": "4+",
+        "totalRecipes": "4",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuiSMP1PJdQ4H-f7WSnEi32QUSAOraGoLUXA&s",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    },
+    {
+        "id": "4",
+        "chefName": "M.A Karim",
+        "likes": "2.9k+",
+        "years": "5+",
+        "totalRecipes": "3",
+        "image": "https://pbs.twimg.com/media/D5OIwuBUYAEv6vW?format=jpg&name=large",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    },
+    {
+        "id": "5",
+        "chefName": "K.B Siam",
+        "likes": "1.7k+",
+        "years": "8+",
+        "totalRecipes": "4",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRItpfzcb8pwrrpBug-FtN4pa9BDf6rs_NjUw&s",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    },
+    {
+        "id": "6",
+        "chefName": "Mithun Das",
+        "likes": "0.9k+",
+        "years": "3+",
+        "totalRecipes": "2",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XChZ2rj37l00aYRzZ5o-de_q2wuTNIx1pg&s",
+        "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
+    }
+]
