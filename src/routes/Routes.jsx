@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import Blogs from "../pages/Blogs";
 import ChefRecipes from "../components/shared/chef-section/chefRecipes";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -27,11 +28,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "blogs",
-                element: <Blogs></Blogs>
+                element: <PrivateRoute><Blogs></Blogs></PrivateRoute>
             },
             {
                 path: "chef-recipes/:nameId",
-                element: <ChefRecipes></ChefRecipes>
+                element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>
             }
             
         ],

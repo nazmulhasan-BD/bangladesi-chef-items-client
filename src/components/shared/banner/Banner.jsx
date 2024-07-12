@@ -8,7 +8,7 @@ const Banner = () => {
       <div className='absolute text-center lg:mt-40  lg:inset-16 lg:border  rounded-lg lg:bg-blue-700 lg:bg-opacity-40 '>
         <h2 style={{
           textShadow: '-2px -2px 0 #FEE7B9,2px -2px 0 #FEE7B9,-2px 2px 0 #FEE7B9, 2px 2px 0 #FEE7B9'
-        }} className='text-3xl text-blue-900  lg:mt-3 mt-6 lg:text-5xl font-bold'>
+        }} className='text-3xl text-red-700  lg:mt-3 mt-6 lg:text-5xl font-bold'>
           Welcome to our home page
         </h2>
         <h2 className=" text-lg mx-auto lg:text-2xl   text-justify font-lobstar text-[#ffffff] tracking-wide lg:mt-10 mt-5  lg:px-10 px-4">

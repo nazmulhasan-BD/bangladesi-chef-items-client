@@ -24,15 +24,17 @@ const ChefRecipes = () => {
     if (!recipe) {
         return <div className=' flex mt-24  justify-center'>
             <p className='text-5xl font-bold'>L</p>
-            <p className='mt-[10px]'><Vortex
-                visible={true}
-                height="42"
-                width="40"
-                ariaLabel="vortex-loading"
-                wrapperStyle={{}}
-                wrapperClass="vortex-wrapper"
-                colors={['red', 'blue', 'green', 'yellow', 'white', 'orange', 'purple']}
-            /></p>
+            <p className='mt-[10px]'>
+                <Vortex
+                    visible={true}
+                    height="42"
+                    width="40"
+                    ariaLabel="vortex-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="vortex-wrapper"
+                    colors={['red', 'blue', 'green', 'yellow', 'white', 'orange', 'purple']}
+                />
+            </p>
             <p className='text-5xl font-bold'>ading </p>
             <span className="text-yellow-400 mt-3 ml-2 loading loading-dots loading-lg"></span>
         </div>
@@ -62,7 +64,7 @@ const ChefRecipes = () => {
                 <div className='grid gap-10 grid-cols-3 mt-10'>
                     {infos.map((info, index) => {
 
-                       return <RecipeInformation key={index} info={info}></RecipeInformation>
+                        return <RecipeInformation key={index} info={info}></RecipeInformation>
                     })}
                 </div>
             </div>

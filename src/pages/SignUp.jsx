@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialSignIn from './../components/social-button/SocialSignIn';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
@@ -8,8 +8,10 @@ import { useState } from 'react';
 const SignUp = () => {
     const { createUser, updateUser, logOut, setLoading, error, setError } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
     const [handleEmail, handlePassword] = useUtilities();
     const [isload, setLoad] = useState(false);
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -33,7 +35,7 @@ const SignUp = () => {
 
                 logOut()
                     .then(() => {
-                        navigate("/login")
+                        navigate(location?.state?.pathname || "/login");
                     })
                     .catch(error => {
                         setError(error.code)

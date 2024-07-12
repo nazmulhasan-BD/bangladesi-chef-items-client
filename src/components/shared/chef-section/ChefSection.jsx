@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import ChefCard from './ChefCard';
+import CustomerReviews from './../customar review/CustomarReviews';
 
 const ChefSection = () => {
     const [cards, setCards] = useState([]);
@@ -17,15 +18,16 @@ const ChefSection = () => {
             </h3>
             <div className="grid grid-cols-3 gap-20">
                 {
-                    cards.map((card) => 
+                    cards.map((card) =>
                         <ChefCard
-                        key={card.id}
-                        card= {card}
+                            key={card.id}
+                            card={card}
 
                         ></ChefCard>
                     )
                 }
             </div>
+            <CustomerReviews></CustomerReviews>
         </div>
     );
 };

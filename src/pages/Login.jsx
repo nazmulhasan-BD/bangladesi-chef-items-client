@@ -71,7 +71,7 @@ const Login = () => {
                                 }
                                 <label className="label">
                                     <span>Have you no Account?</span>
-                                    <Link to="/signup" className=" text-lg text-yellow-700 font-bold">Sign-up now!</Link>
+                                    <Link to="/signup" state={location.state} className=" text-lg text-yellow-700 font-bold">Sign-up now!</Link>
                                 </label>
                             </div>
                         </form>

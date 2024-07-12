@@ -4,13 +4,14 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { FaGithubSquare, FaGoogle } from 'react-icons/fa';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const SocialSignIn = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const { googleSignUp, githubSignUp, setLoading, updateUser, setError, user } = useAuth();
+    const location = useLocation();
     const navigate = useNavigate();
     // google sign in method 
     const handleGoogle = () => {
@@ -27,7 +28,7 @@ const SocialSignIn = ({ children }) => {
                         setError(error.code)
                         setLoading(false);
                     })
-                navigate("/");
+                navigate(location?.state?.pathname || "/");
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -60,7 +61,7 @@ const SocialSignIn = ({ children }) => {
                         setError(error.code)
                         setLoading(false);
                     })
-                navigate("/")
+                navigate(location?.state?.pathname || "/");
                 Swal.fire({
                     position: "center",
                     icon: "success",
