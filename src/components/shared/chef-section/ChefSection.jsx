@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import ChefCard from './ChefCard';
 import CustomerReviews from './../customar review/CustomarReviews';
+import FoodItems from './../food-items/FoodItems';
 
 const ChefSection = () => {
     const [cards, setCards] = useState([]);
@@ -27,6 +28,7 @@ const ChefSection = () => {
                     )
                 }
             </div>
+            <FoodItems></FoodItems>
             <CustomerReviews></CustomerReviews>
         </div>
     );

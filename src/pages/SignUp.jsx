@@ -59,7 +59,6 @@ const SignUp = () => {
                 setLoading(false);
                 setLoad(false);
             });
-
     }
     return (
         <div className="hero bg-base-200">
