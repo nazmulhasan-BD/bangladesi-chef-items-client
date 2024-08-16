@@ -18,8 +18,8 @@ const CarouselSection = () => {
   ];
 
   return (
-    <div className=" text-center my-8">
-      <h1  className=" text-2xl lg:text-4xl max-w-[800px] mx-auto  text-transparent bg-clip-text bg-[linear-gradient(90deg,#4f2adb_30%,#ffdd44_40%,#a816bf_80%)] font-extrabold mb-6">Here are some items with slider !</h1>
+    <div className=" text-center my-5 md:my-8">
+      <h1  className=" text-xl md:text-4xl sm:text-2xl  max-w-[800px] mx-auto  text-transparent bg-clip-text bg-[linear-gradient(90deg,#4f2adb_30%,#ffdd44_40%,#a816bf_80%)] font-extrabold mb-6">Here are some items with slider !</h1>
       <Carousel items={items} />
     </div>
   );

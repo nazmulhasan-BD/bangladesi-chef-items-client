@@ -11,6 +11,7 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [open, setOpen] = useState(false);
 
     // for google signup
     const googleSignUp = (provider) => {
@@ -81,7 +82,9 @@ const UserProvider = ({ children }) => {
         loading,
         setLoading,
         error,
-        setError
+        setError,
+        open,
+        setOpen
     }
 
     return (

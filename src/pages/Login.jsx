@@ -34,55 +34,51 @@ const Login = () => {
     }
 
     return (
-        <div className="hero bg-base-200">
-            <div className="hero pt-3 bg-base-200">
-                <div className="hero-content flex-col ">
-                    <div className="text-center ">
-                        <h1 className="text-3xl font-bold">Please Login!</h1>
-                    </div>
-                    <div className="card min-w-96 shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogIn} className=" px-8 pt-2">
+        <div className="w-full px-2 bg-slate-300 py-5">
+            <div className="text-center ">
+                <h1 className="lg:text-3xl sm:text-2xl mb-4 text-xl font-bold">Please Login!</h1>
+            </div>
+            <div className="card mx-auto shadow-2xl lg:max-w-[400px] lt:max-w-[350px] max-w-[320px] border border-blue-800 bg-base-100">
+                <form onSubmit={handleLogIn} className=" lt:px-8 px-4 pt-2">
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input onChange={handleEmail} type="email" name='email' placeholder="email" className="input input-bordered" required />
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Email</span>
+                        </label>
+                        <input onChange={handleEmail} type="email" name='email' placeholder="email" className="input  sm:h-12 h-10 md:text-lg input-bordered" required />
 
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input input-bordered" required />
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Password</span>
+                        </label>
+                        <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input input-bordered sm:h-12 h-10 md:text-lg" required />
 
-                                {/* ---- error handle -------- */}
-                                {error &&
-                                    <p className='text-red-600 italic text-center pt-3 font-bold'>{error}
-                                    </p>
-                                }
-                            </div>
-
-                            <div className="form-control mt-5">
-                                {
-                                    !isload ?
-                                        <button type="submit" disabled={error} className={error ? "bg-blue-400 text-sm text-white py-3 px-4 rounded-lg cursor-not-allowed" : "btn btn-primary"}>Log in</button>
-                                        :
-                                        <button className="btn btn-primary"><span className="loading loading-spinner loading-sm"></span>
-                                        </button>
-                                }
-                                <label className="label">
-                                    <span>Have you no Account?</span>
-                                    <Link to="/signup" state={location.state} className=" text-lg text-yellow-700 font-bold">Sign-up now!</Link>
-                                </label>
-                            </div>
-                        </form>
-                        {/* Social log in section here ----------- */}
-                        <div className='px-9'>
-                            <SocialSignIn> log in </SocialSignIn>
-                        </div>
+                        {/* ---- error handle -------- */}
+                        {error &&
+                            <p className='text-red-600 italic text-center pt-3 font-bold'>{error}
+                            </p>
+                        }
                     </div>
 
+                    <div className="form-control mt-5">
+                        {
+                            !isload ?
+                                <button type="submit" disabled={error} className={error ? "bg-blue-400 text-sm text-white sm:py-3 py-[9px] px-4 rounded-lg cursor-not-allowed" : " bg-blue-700 sm:p-3 py-[9px] text-white md:text-lg font-semibold rounded-lg"}>Log in</button>
+                                :
+                                <button className="btn btn-primary"><span className="loading loading-spinner loading-sm"></span>
+                                </button>
+                        }
+                        <label className="label">
+                            <span className='font-semibold'>No account yet?</span>
+                            <Link to="/signup" state={location.state} className=" lt:text-lg text-yellow-700 font-bold"> Register here!</Link>
+                        </label>
+                    </div>
+                </form>
+                {/* Social log in section here ----------- */}
+                <div className='px-9'>
+                    <SocialSignIn>Sign in</SocialSignIn>
                 </div>
             </div>
+
         </div>
     );
 };

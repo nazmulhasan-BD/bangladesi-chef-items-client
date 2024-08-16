@@ -11,7 +11,7 @@ const SignUp = () => {
     const location = useLocation();
     const [handleEmail, handlePassword] = useUtilities();
     const [isload, setLoad] = useState(false);
-    
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -61,60 +61,58 @@ const SignUp = () => {
             });
     }
     return (
-        <div className="hero bg-base-200">
-            <div className="hero-content flex-col gap-8 mt-10 lg:flex-row-reverse">
-                <div className="text-center w-[300px] p-6  rounded-s-full bg-white">
-                    <h1 className="text-3xl font-bold mb-10">
-                        Please Sign up!
-                    </h1>
-                    {/* social sing in component */}
-                    <SocialSignIn> sign up </SocialSignIn>
-                </div>
-                <div className="card min-w-96 shadow-2xl bg-base-100">
-                    <form onSubmit={handleSubmit} className="card-body py-2">
+        <div className="bg-slate-300  sm:flex justify-center items-center md:gap-8 gap-4  py-5 flex-row-reverse">
+            <div className="text-center max-sm:mx-auto  lt:max-w-[340px] max-w-[320px] w-full  max-sm:mb-4 sm:p-8 p-4 border border-blue-800  rounded-s-full bg-white">
+                <h1 className="lg:text-3xl sm:text-2xl text-xl font-bold">
+                    Please Sign up!
+                </h1>
+                {/* social sing in component */}
+                <SocialSignIn>Sign up </SocialSignIn>
+            </div>
+            <div className="card max-sm:mx-auto shadow-2xl lg:max-w-[400px] lt:max-w-[340px] max-w-[320px] w-full  bg-base-100 border border-blue-800">
+                <form onSubmit={handleSubmit} className=" lt:px-8 px-4 py-2">
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input type="text" name='name' placeholder="your name" className="input input-bordered" required />
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Name</span>
+                        </label>
+                        <input type="text" name='name' placeholder="your name" className="input  sm:h-12 h-10 md:text-lg input-bordered" required />
 
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input onChange={handleEmail} type="email" name='email' placeholder="email" className="input input-bordered" required />
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Email</span>
+                        </label>
+                        <input onChange={handleEmail} type="email" name='email' placeholder="email" className="input sm:h-12 h-10 md:text-lg input-bordered" required />
 
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input input-bordered" required />
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Password</span>
+                        </label>
+                        <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input sm:h-12 h-10 md:text-lg input-bordered" required />
 
-                            <label className="label">
-                                <span className="label-text">Photo Url</span>
-                            </label>
-                            <input type="url" name="url" placeholder="your photo url" className="input input-bordered" required />
-                            {/* ---- error handle -------- */}
-                            {error &&
-                                <p className='text-red-600 italic text-center pt-3 font-bold'>{error}
-                                </p>
-                            }
-                        </div>
-                        {/* loading spin when sign up  */}
-                        <div className="form-control mt-4">
-                            {
-                                !isload ?
-                                    <button type="submit" disabled={error} className={error ? "bg-blue-400 text-sm text-white py-3 px-4 rounded-lg cursor-not-allowed" : "btn btn-primary"}>Sign-up</button>
-                                    :
-                                    <button className="btn btn-primary"><span className="loading loading-spinner loading-sm"></span>
-                                    </button>
-                            }
-                            <label className="label">
-                                <span>Al-ready have an account ?</span>
-                                <Link to="/login" className=" text-lg text-yellow-700 font-bold">Please Login!</Link>
-                            </label>
-                        </div>
-                    </form>
-                </div>
+                        <label className="label">
+                            <span className="md:text-lg font-semibold">Photo Url</span>
+                        </label>
+                        <input type="url" name="url" placeholder="your photo url" className="input sm:h-12 h-10 md:text-lg input-bordered" required />
+                        {/* ---- error handle -------- */}
+                        {error &&
+                            <p className='text-red-600 italic text-center pt-3 font-bold'>{error}
+                            </p>
+                        }
+                    </div>
+                    {/* loading spin when sign up  */}
+                    <div className="form-control mt-4">
+                        {
+                            !isload ?
+                                <button type="submit" disabled={error} className={error ? "bg-blue-400 text-sm text-white py-3 px-4 rounded-lg cursor-not-allowed" : "bg-blue-700 sm:p-3 py-[9px] text-white md:text-lg font-semibold rounded-lg"}>Sign-up</button>
+                                :
+                                <button className="btn btn-primary"><span className="loading loading-spinner loading-sm"></span>
+                                </button>
+                        }
+                        <label className="label">
+                            <span className='font-semibold'>Have an account ?</span>
+                            <Link to="/login" className=" lg:text-lg text-yellow-700 font-bold">Login now!</Link>
+                        </label>
+                    </div>
+                </form>
             </div>
         </div>
     );

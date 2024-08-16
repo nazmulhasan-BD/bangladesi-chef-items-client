@@ -20,7 +20,7 @@ const useCarousel = ({ items }) => {
   return (
     <div className='border-animation2 border-2 lg:p-3 p-2 border-yellow-600 '>
       <div className='relative z-10 rounded-xl overflow-hidden'>
-        <div className='lg:h-[460px] h-full flex transition-transform duration-1000 ease-in-out' style={{ transform: `translate(-${currentIndex * 100}%)` }}>
+        <div className='2xl:h-[520px] xl:h-[440px] md:h-[300px] sm:h-[280px] h-60 max-lt:h-48 flex transition-transform duration-1000 ease-in-out' style={{ transform: `translate(-${currentIndex * 100}%)` }}>
           {
             items.map((item, i) => {
               return <img className='min-w-full rounded-xl ' key={i} src={item} alt="" />;
@@ -35,6 +35,7 @@ const useCarousel = ({ items }) => {
           <FaAngleRight className='lg:text-3xl text-xl' />
           </button>
         </div>
+        
         <div className="flex justify-center lg:gap-6 gap-3 absolute bottom-10 left-0 right-0">
           {items.map((_, index) => (
             <div

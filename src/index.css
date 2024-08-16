@@ -4,7 +4,7 @@
 
 /* create my coustom css library for tailwind */
 .my-container {
-    @apply max-w-[1340px] w-full mx-auto
+    @apply max-w-[1536px] w-full mx-auto
 }
 
 .my-container2 {

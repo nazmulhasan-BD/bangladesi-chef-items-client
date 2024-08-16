@@ -22,32 +22,54 @@ const ChefRecipes = () => {
     const recipe = recipes.find(terget => terget.chefName == dynamic.nameId);
 
     if (!recipe) {
-        return <div className=' flex mt-24  justify-center'>
-            <p className='text-5xl font-bold'>L</p>
-            <p className='mt-[10px]'>
+        return <div className=' flex sm:mt-[25vh] mt-[10vh] w-full items-center justify-center'>
+            <p className='lg:text-5xl sm:text-3xl text-xl  font-bold'>L</p>
+            <p className='max-lg:hidden mt-[15px]'>
                 <Vortex
                     visible={true}
                     height="42"
-                    width="40"
+                    width="42"
                     ariaLabel="vortex-loading"
                     wrapperStyle={{}}
                     wrapperClass="vortex-wrapper"
-                    colors={['red', 'blue', 'green', 'yellow', 'white', 'orange', 'purple']}
+                    colors={['red', 'blue', 'green', 'yellow', 'black', 'orange', 'purple']}
                 />
             </p>
-            <p className='text-5xl font-bold'>ading </p>
-            <span className="text-yellow-400 mt-3 ml-2 loading loading-dots loading-lg"></span>
+            <p className='lg:hidden max-sm:hidden mt-[10px]'>
+                <Vortex
+                    visible={true}
+                    height="26"
+                    width="26"
+                    ariaLabel="vortex-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="vortex-wrapper"
+                    colors={['red', 'blue', 'green', 'yellow', 'black', 'orange', 'purple']}
+                />
+            </p>
+            <p className='sm:hidden mt-[6px]'>
+                <Vortex
+                    visible={true}
+                    height="16"
+                    width="16"
+                    ariaLabel="vortex-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="vortex-wrapper"
+                    colors={['red', 'blue', 'green', 'yellow', 'black', 'orange', 'purple']}
+                />
+            </p>
+            <p className='lg:text-5xl sm:text-3xl text-xl font-bold'>ading </p>
+            <span className="text-yellow-400 lg:mt-4 sm:mt-2 mt-[6px] ml-1  sm:ml-2 loading loading-dots lg:loading-lg sm:loading-md loading-sm"></span>
         </div>
     }
     return (
         <>
-            <div className=' flex items-center gap-10  w-[85%] mx-auto  mt-10'>
+            <div className=' flex max-sm:flex-col items-center lg:gap-10 gap-6  w-[96%] mx-auto  mt-10'>
                 <div>
-                    <img className='w-[450px] rounded-lg shadow-lg h-[274px]' src={recipe.image} alt="chef image" />
+                    <img className='sm:w-[450px] w-[400px] rounded-lg shadow-lg lg:h-[250px] sm:h-64 h-52' src={recipe.image} alt="chef image" />
 
                 </div>
-                <div className='w-2/3 p-4 border-2 rounded-lg'>
-                    <h5 className="text-2xl font-bold">Chef Name: <span className="bg-[linear-gradient(90deg,#180a59_20%,#ffdd44,#a816bf_60%)] bg-clip-text text-transparent ">{recipe.chefName}</span>
+                <div className='sm:w-2/3 p-4 border-2 rounded-lg'>
+                    <h5 className="lg:text-2xl text-xl font-bold">Chef Name: <span className="bg-[linear-gradient(90deg,#180a59_20%,#ffdd44,#a816bf_60%)] bg-clip-text text-transparent ">{recipe.chefName}</span>
                     </h5>
                     <p className="font-semibold text-justify mt-4">{recipe.bio}</p>
                     <p className=" flex items-center mt-2 gap-2 font-semibold">Likes: <FaThumbsUp className=" text-blue-500" />{recipe.likes}</p>
@@ -57,11 +79,11 @@ const ChefRecipes = () => {
             </div>
 
             {/*--------- chef recipes information: --------*/}
-            <div className='my-10'>
-                <h3 className=" mx-auto text-center bg-[linear-gradient(40deg,#180a59_30%,#ffdd44,#a816bf_70%)] bg-clip-text text-transparent font-extrabold text-4xl w-2/3 h-[50px]">
+            <div className='my-10 w-[96%] mx-auto '>
+                <h3 className=" mx-auto text-center bg-[linear-gradient(40deg,#180a59_30%,#ffdd44,#a816bf_70%)] bg-clip-text text-transparent font-extrabold xl:text-4xl lg:text-3xl sm:text-2xl text-xl md:w-2/3 lg:h-[50px]">
                     Chef Recipes Information :
                 </h3>
-                <div className='grid gap-10 grid-cols-3 mt-10'>
+                <div className='grid lg:gap-10 sm:gap-6 gap-8 md:grid-cols-2 lg:grid-cols-3 grid-cols-1 mt-10'>
                     {infos.map((info, index) => {
 
                         return <RecipeInformation key={index} info={info}></RecipeInformation>

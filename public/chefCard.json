@@ -19,11 +19,11 @@
     },
     {
         "id": "3",
-        "chefName": "Muhammad Ali",
+        "chefName": "Jaheda Begum",
         "likes": "3.4k+",
         "years": "4+",
         "totalRecipes": "4",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuiSMP1PJdQ4H-f7WSnEi32QUSAOraGoLUXA&s",
+        "image": "https://assets.telegraphindia.com/telegraph/2022/May/1652363208__dscf0138.jpg",
         "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
     },
     {
@@ -46,11 +46,11 @@
     },
     {
         "id": "6",
-        "chefName": "Mithun Da",
+        "chefName": "Muhammad Ali",
         "likes": "0.9k+",
         "years": "3+",
         "totalRecipes": "2",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_XChZ2rj37l00aYRzZ5o-de_q2wuTNIx1pg&s",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuiSMP1PJdQ4H-f7WSnEi32QUSAOraGoLUXA&s",
         "bio": "I am a passionate Bangladeshi chef with over a decade of experience in crafting traditional and fusion cuisine. My culinary journey is dedicated to showcasing the rich flavors of Bangladesh, blending them with innovative techniques. Committed to excellence, I bring authentic taste and modern flair to every dish."
     }
 ]
