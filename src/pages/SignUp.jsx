@@ -93,7 +93,7 @@ const SignUp = () => {
                         </label>
                         <div className='relative'>
                             <input onChange={handlePassword} type={visible? "text":"password"}  name='password' placeholder="password" className="input w-full sm:h-12 h-10 md:text-lg input-bordered" required />
-                            <span onClick={()=>setVisible(!visible)}  className=' right-7 top-4 absolute cursor-pointer'>
+                            <span onClick={()=>setVisible(!visible)}  className=' right-7 sm:top-4 top-3 absolute cursor-pointer'>
                             {visible ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>

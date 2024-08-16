@@ -10,12 +10,12 @@ const Blogs = () => {
 
             </h1>
             {/* Add a button to download the page as a PDF */}
-            <div className="mt-4 ">
+            <div className="md:mt-6 mt-4 ">
                 <button className='w-full'>
                     <PDFDownloadLink
                         document={<PDFPage />}
                         fileName="blog.pdf"
-                        className="px-4 sm:text-lg text-sm py-2 text-white bg-blue-500 font-semibold rounded-md hover:bg-blue-600"
+                        className="px-4 sm:text-lg text-sm py-2 text-white  font-semibold bg-gradient-to-r from-blue-600 to-blue-400 rounded-md hover:from-pink-600 hover:to-orange-400"
                     >
                         {({ loading }) => (loading ? 'Loading document...' : 'Download PDF')}
                     </PDFDownloadLink>

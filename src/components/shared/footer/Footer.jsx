@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
         <footer className=" md:text-lg font-bold grid grid-flow-row md:gap-8 gap-5 footer-center px-2  py-4 bg-neutral text-neutral-content rounded-b-md">
             <nav className="grid lt:grid-flow-col max-lt:grid-cols-2  sm:gap-20 gap-5">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Recipe Items</a>
-                <a className="link link-hover">Recipe Reviwes </a>
+                <Link to="/about-us" className="link link-hover">About us</Link>
+                <Link className="link link-hover">Contact</Link>
+                <Link className="link link-hover">Recipe Items</Link>
+                <Link className="link link-hover">Recipe Reviwes </Link>
             </nav>
             {/* social media button on footer */}
             <nav>

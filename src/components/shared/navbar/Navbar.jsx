@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { Bounce, toast } from 'react-toastify';
 import { VscChromeClose } from "react-icons/vsc";
+import ActiveLink from './ActiveLink';
 
 const Navbar = () => {
     const { user, logOut, loading, open, setOpen } = useAuth();
@@ -42,7 +43,7 @@ const Navbar = () => {
 
                                 <VscChromeClose onClick={() => setOpen(!open)} className='font-bold h-6 w-6' />
 
-                                <ul className=" text-sm absolute text-center top-14 text-white bg-blue-600 p-1 left-0 font-bold  shadow  rounded-md w-[90px] ">
+                                <ul className=" text-sm absolute text-center top-12 bg-gradient-to-b from-indigo-800 to-blue-400 text-white bg-gradient- p-1 left-[2px] font-bold  shadow  rounded-md w-[100px] ">
                                     <li className='w-full bg-blue-800  border-2 border-yellow-300 rounded-md p-[2px]'><Link to="/">Home</Link></li>
 
                                     <li className='w-full bg-blue-800  border-2 border-yellow-300 rounded-md mt-[2px] p-[2px]'><Link to="/blogs">Blogs</Link></li>
@@ -87,13 +88,13 @@ const Navbar = () => {
             <div className=" max-sm:hidden    ">
                 <ul className="flex xl:gap-20 lg:gap-16 md:gap-10 sm:gap-5 lg:text-lg lg:font-bold font-semibold ">
                     <li className='hover:bg-blue-500 sm:p-1 hover:rounded-lg'>
-                        <Link to="/">Home</Link>
+                        <ActiveLink to="/">Home</ActiveLink>
                     </li>
                     <li className='hover:bg-blue-500 sm:p-1 hover:rounded-lg'>
-                        <Link to="/blogs">Blogs</Link>
+                        <ActiveLink to="/blogs">Blogs</ActiveLink>
                     </li>
                     <li className='hover:bg-blue-500 sm:p-1 hover:rounded-lg'>
-                        <Link to="/about-us">About us</Link>
+                        <ActiveLink to="/about-us">About us</ActiveLink>
                     </li>
 
                     <li className='min-[443px]:hidden hover:bg-blue-500 font-bold hover:rounded-lg'>
