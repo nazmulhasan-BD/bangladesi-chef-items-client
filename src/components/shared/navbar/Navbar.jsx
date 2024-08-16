@@ -19,6 +19,10 @@ const Navbar = () => {
                     progress: undefined,
                     theme: "light",
                     transition: Bounce,
+                    style: {
+                        color: 'blue',  /* Replace with your desired color */
+                        fontWeight:'700'
+                    },
                 });
             }).catch((error) => {
                 console.log(error);

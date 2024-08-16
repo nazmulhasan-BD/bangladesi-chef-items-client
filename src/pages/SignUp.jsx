@@ -4,6 +4,7 @@ import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useUtilities from '../hooks/useUtilities';
 import { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const SignUp = () => {
     const { createUser, updateUser, logOut, setLoading, error, setError } = useAuth();
@@ -11,7 +12,7 @@ const SignUp = () => {
     const location = useLocation();
     const [handleEmail, handlePassword] = useUtilities();
     const [isload, setLoad] = useState(false);
-
+    const [visible, setVisible] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -28,9 +29,13 @@ const SignUp = () => {
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: "registation successful",
+                    title: "registation successful !",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 2000,
+                    customClass: {
+                        title: 'text-lg',
+                        content: 'text-md'
+                    }
                 });
 
                 logOut()
@@ -86,7 +91,12 @@ const SignUp = () => {
                         <label className="label">
                             <span className="md:text-lg font-semibold">Password</span>
                         </label>
-                        <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input sm:h-12 h-10 md:text-lg input-bordered" required />
+                        <div className='relative'>
+                            <input onChange={handlePassword} type={visible? "text":"password"}  name='password' placeholder="password" className="input w-full sm:h-12 h-10 md:text-lg input-bordered" required />
+                            <span onClick={()=>setVisible(!visible)}  className=' right-7 top-4 absolute cursor-pointer'>
+                            {visible ? <FaEyeSlash /> : <FaEye />}
+                            </span>
+                        </div>
 
                         <label className="label">
                             <span className="md:text-lg font-semibold">Photo Url</span>

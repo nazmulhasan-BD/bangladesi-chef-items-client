@@ -1,10 +1,11 @@
+
 import useAuth from "./useAuth";
 
 
 const useUtilities = () => {
 
     const { setError } = useAuth();
-
+    
     // email validation -----------------
 
     const handleEmail = (e) => {
@@ -33,6 +34,10 @@ const useUtilities = () => {
             setError("");
         }
     };
+
+    // password toggle ---------------------
+
+   
 
     return [handleEmail, handlePassword]
 };

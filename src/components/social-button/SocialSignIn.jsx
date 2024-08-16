@@ -31,10 +31,15 @@ const SocialSignIn = ({ children }) => {
                 navigate(location?.state?.pathname || "/");
                 Swal.fire({
                     position: "center",
+                    color: "blue",
                     icon: "success",
-                    title: "Log in successful",
+                    title: "Login successful",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 2000,
+                    customClass: {
+                        title: 'text-lg',
+                        content: 'text-md'
+                    }
                 });
                 setLoading(false);
             })
@@ -64,10 +69,15 @@ const SocialSignIn = ({ children }) => {
                 navigate(location?.state?.pathname || "/");
                 Swal.fire({
                     position: "center",
+                    color: "blue",
                     icon: "success",
-                    title: "Log in successful",
+                    title: "Login successful",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 2000,
+                    customClass: {
+                        title: 'text-lg',
+                        content: 'text-md'
+                    }
                 });
                 setLoading(false);
             })

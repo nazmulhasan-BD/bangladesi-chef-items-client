@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialSignIn from './../components/social-button/SocialSignIn';
 import useAuth from '../hooks/useAuth';
 import useUtilities from '../hooks/useUtilities';
+import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const [handleEmail, handlePassword] = useUtilities();
@@ -10,6 +12,7 @@ const Login = () => {
     const [isload, setLoad] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const [visible, setVisible] = useState(false);
 
     const handleLogIn = (event) => {
         event.preventDefault()
@@ -21,6 +24,18 @@ const Login = () => {
             .then(() => {
                 setError("");
                 form.reset();
+                Swal.fire({
+                    position: "center",
+                    color: "blue",
+                    icon: "success",
+                    title: "Login successful !",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    customClass: {
+                        title: 'text-lg',
+                        content: 'text-md'
+                    }
+                });
                 navigate(location?.state?.pathname || "/");
             })
             .catch((er) => {
@@ -50,7 +65,12 @@ const Login = () => {
                         <label className="label">
                             <span className="md:text-lg font-semibold">Password</span>
                         </label>
-                        <input onChange={handlePassword} type="password" name='password' placeholder="password" className="input input-bordered sm:h-12 h-10 md:text-lg" required />
+                        <div className='relative'>
+                            <input onChange={handlePassword} type={visible? "text":"password"}  name='password' placeholder="password" className="input w-full sm:h-12 h-10 md:text-lg input-bordered" required />
+                            <span onClick={()=>setVisible(!visible)}  className=' right-7 top-4 absolute cursor-pointer'>
+                            {visible ? <FaEyeSlash /> : <FaEye />}
+                            </span>
+                        </div>
 
                         {/* ---- error handle -------- */}
                         {error &&
